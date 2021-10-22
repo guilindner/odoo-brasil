@@ -35,8 +35,8 @@ class ResCompany(models.Model):
                     company.l10n_br_cert_state = 'expired'
                 company.l10n_br_cert_information = "%s\n%s\n%s\n%s" % (
                     subj.CN, subj.L, subj.O, subj.OU)
-            except crypto.Error:
-                company.l10n_br_cert_state = 'invalid_password'
+            #except crypto.Error:
+            #    company.l10n_br_cert_state = 'invalid_password'
             except:
                 _logger.warning(
                     _(u'Unknown error when validating certificate'),
